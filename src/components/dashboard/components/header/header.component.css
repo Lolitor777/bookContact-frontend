@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.header-container{
+  text-align: center;
+  margin-top: 4em;
+}
+
+.header-container > h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: rgb(9, 70, 124);
+}

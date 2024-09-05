@@ -1,0 +1,47 @@
+:host {
+  display: block;
+}
+
+.item-contact-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 1em;
+  border-bottom: 1px rgba(22, 100, 148, 0.2) solid;
+}
+
+.item-contact-container > p {
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0px;
+}
+
+.item-contact-container-buttons {
+  display: flex;
+  gap: .5em;
+}
+
+#item-contact-button-1 {
+ background: rgb(39, 142, 36);
+ box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.486);
+}
+
+#item-contact-button-2 {
+  background: rgb(14, 154, 234);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.486);
+}
+
+#item-contact-button-3 {
+  background: rgb(206, 27, 27);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.486);
+}
+
+#item-contact-buttons-icons {
+  margin: 0 auto;
+}

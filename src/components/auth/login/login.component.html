@@ -1,0 +1,29 @@
+
+<form class="form-container">
+
+    <h3>Login de usuario</h3>
+
+  <mat-form-field class="form-input">
+    <mat-label>Correo electrónico</mat-label>
+    <input matInput type="email" />
+  </mat-form-field>
+
+  <mat-form-field class="form-input">
+    <mat-label>Contraseña</mat-label>
+    <input matInput [type]="hide() ? 'password' : 'text'" />
+    <span
+      mat-icon-button
+      matSuffix
+      (click)="clickEvent($event)"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide()"
+    >
+      <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+    </span>
+  </mat-form-field>
+
+  
+    <button mat-flat-button>Iniciar sesión</button>
+
+  <p>¿No tiene cuenta?</p>
+</form>

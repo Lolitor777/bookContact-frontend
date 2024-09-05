@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.form-container {
+  border: rgba(22, 100, 148, 0.2) solid 1px;
+  display:  flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 12px;
+}
+
+.form-container > h3 {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.form-input {
+  width: 60%;
+}
+
+.form-container > p {
+  margin-top: 1em;
+}
