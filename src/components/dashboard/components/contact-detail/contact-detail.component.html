@@ -1,17 +1,21 @@
+
 <div class="contact-detail-container">
-    <h3>nombre apellido</h3>
-    
-    <div class="contact-detail-container-child">
-        <div class="contact-detail-container-info">
-            <mat-icon class="contact-detail-info-icon">email</mat-icon> <h4>correo</h4>
-        </div>
+    <h3>{{ data.contact.name }} {{ data.contact.last_name }}</h3>
+    <form class="contact-detail-container-child" [formGroup]="contactDetailForm">
+      <mat-form-field>
+          <input type="email" matInput formControlName="email">
+          <mat-icon class="contact-detail-info-icon" matSuffix>email</mat-icon>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <input type="email" matInput formControlName="phone">
+          <mat-icon class="contact-detail-info-icon">phone</mat-icon>
+      </mat-form-field>
+  
+      <mat-form-field>
+          <input type="email" matInput formControlName="address">
+          <mat-icon class="contact-detail-info-icon">location_on</mat-icon>
+      </mat-form-field>
+    </form>
+  </div>
 
-        <div class="contact-detail-container-info">
-            <mat-icon class="contact-detail-info-icon">phone</mat-icon> <h4>número</h4>
-        </div>
-
-        <div class="contact-detail-container-info">
-            <mat-icon class="contact-detail-info-icon">location_on</mat-icon> <h4>direccion</h4>
-        </div>
-    </div>
-</div>

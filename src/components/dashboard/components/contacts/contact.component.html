@@ -6,9 +6,9 @@
         <p>{{ contact.name }}</p>
     
         <div class="item-contact-container-buttons">
-            <button id="item-contact-button-1" mat-flat-button>Ver más</button>
+            <button id="item-contact-button-1" mat-flat-button (click)="openDialog( contact )">Ver más</button>
     
-            <button id="item-contact-button-2" mat-flat-button>
+            <button id="item-contact-button-2" mat-flat-button (click)="openDialogEdit( contact )"> 
                 <mat-icon id="item-contact-buttons-icons">edit</mat-icon>
             </button>
     

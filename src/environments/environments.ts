@@ -7,3 +7,8 @@ export const environments = {
     inactiveContact: 'http://localhost:3000/api/contact/desactivarContacto/',
     deleteContact: 'http://localhost:3000/api/contact/eliminarContacto/',
 }
+
+export const authEnvironments = {
+    login: 'http://localhost:3000/api/auth/login',
+    createUser: 'http://localhost:3000/api/auth/crearUsuario'
+}

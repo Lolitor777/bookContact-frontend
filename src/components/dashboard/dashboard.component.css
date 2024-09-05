@@ -11,6 +11,23 @@
   overflow: hidden;
 }
 
+.dashboard-btn-logout {
+  position: absolute;
+  right: 6em;
+  top: 2em;
+  z-index: 10;
+  border: white solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dashboard-btn-logout-icon {
+  color: white;
+  margin: 0 auto;
+  display: block;
+} 
+
 .border-top-image {
   position: absolute;
   right: 0;
