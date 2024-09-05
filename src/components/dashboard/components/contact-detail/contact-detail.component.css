@@ -4,9 +4,12 @@
 
 .contact-detail-container {
   border: rgba(22, 100, 148, 0.2) solid 1px;
-  width: 90%;
+  width: 50%;
   margin: 0 auto;
   max-width: 600px;
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
   padding: 1em;
   border-radius: 12px;
 }

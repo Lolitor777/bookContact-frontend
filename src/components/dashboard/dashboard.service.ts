@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environments } from '../../environments/environments';
 import { Contact, Contacts, DataInactive, DeleteContacts } from './dashboard.type';
 
 @Injectable()
 export class DashboardService {
+
+  private updateSubject = new Subject<void>();
+  update$ = this.updateSubject.asObservable();
 
   constructor( private _http: HttpClient ) {
     
@@ -27,8 +30,8 @@ export class DashboardService {
     return this._http.post<Contacts> (`${environments.createContact}`, contact);
   }
 
-  updateContact( contact_id: number,  contact: Contacts ): Observable<Contacts> {
-    return this._http.put<Contacts> (`${environments.updateContact}${contact_id}`, contact);
+  updateContact( contact_id: number,  contact: any ): Observable<DeleteContacts> {
+    return this._http.put<DeleteContacts> (`${environments.updateContact}${contact_id}`, contact);
   }
 
   inactiveContact( contact_id: number,  is_active: DataInactive ): Observable<DeleteContacts> {
@@ -39,11 +42,10 @@ export class DashboardService {
     return this._http.delete<DeleteContacts> (`${environments.deleteContact}${contact_id}`);
   }
 
-  private contactSubject = new BehaviorSubject<Contact | null>(null);
-  contact$ = this.contactSubject.asObservable();
-
-  setContact(contact: Contact) {
-    this.contactSubject.next(contact);
+  notifyUpdate() {
+    this.updateSubject.next();
   }
+
+  
 
 }

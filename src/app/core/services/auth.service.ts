@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { authEnvironments } from '../../../environments/environments';
 
 @Injectable()
@@ -12,7 +12,11 @@ export class AuthService {
   constructor(private _http: HttpClient, private router: Router) { }
 
   createUser( name: string, email: string, password: string ): Observable<any>{
-    return this._http.post<any>(`${authEnvironments.createUser}`, { name, email, password })
+    return this._http.post<any>(`${authEnvironments.createUser}`, { name, email, password }).pipe(
+      catchError((error: any) => {
+        console.error(error);
+        return throwError(error);
+      }))
   }
 
   login( email: string, password: string ): Observable<any>{
