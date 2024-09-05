@@ -24,3 +24,8 @@ export interface DeleteContacts {
 export interface DataInactive {
     is_active: number;
 }
+
+export interface ModalType {
+    contact:  Contact;
+    typeModa: string;
+}

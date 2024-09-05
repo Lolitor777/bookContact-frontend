@@ -13,6 +13,7 @@
   margin: 0 auto;
   padding: 1em;
   border-radius: 12px;
+  margin-top: 6em;
 }
 
 .form-container > h3 {
@@ -24,6 +25,7 @@
   width: 60%;
 }
 
-.form-container > p {
+.form-container > a {
   margin-top: 1em;
+  text-decoration: none;
 }

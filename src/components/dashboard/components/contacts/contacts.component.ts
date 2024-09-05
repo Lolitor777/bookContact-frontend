@@ -6,6 +6,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { DashboardService } from '../../dashboard.service';
 import { Contact, Contacts, DataInactive, DeleteContacts } from '../../dashboard.type'
 import { RouterLink } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactDetailComponent } from '../contact-detail/contact-detail.component';
+import { typeModal } from '../../dashboard.enum';
 
 
 @Component({
@@ -26,7 +29,7 @@ export class ContactsComponent implements OnInit {
     
     contactsData: Contact[] = [];
 
-    constructor( private _dashboardService: DashboardService ) {}
+    constructor( private _dashboardService: DashboardService, private _dialogRef: MatDialog ) {}
 
     ngOnInit(): void {
         this.getContacts()
@@ -55,8 +58,30 @@ export class ContactsComponent implements OnInit {
                 alert( value.msg );
             },  
             error: ( err ) => {
-                console.log( err );
+                alert( err );
             }
         })    
+    }
+
+    openDialog(contact:Contact):void{
+        this._dialogRef.open(ContactDetailComponent, {
+            width: '800px',
+            height: '700px',
+            data: {
+                contact: contact,
+                typeModa: typeModal.view
+              }
+          });
+    }
+
+    openDialogEdit(contact:Contact):void{
+        this._dialogRef.open(ContactDetailComponent, {
+            width: '800px',
+            height: '700px',
+            data: {
+                contact: contact,
+                typeModa: typeModal.edit
+              }
+          });
     }
 }

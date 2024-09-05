@@ -24,7 +24,7 @@ import {MatDividerModule} from '@angular/material/divider';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class RegisterComponent {
+export default class RegisterComponent {
 
     hide = signal( true );
     clickEvent( event: MouseEvent ) {

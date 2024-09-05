@@ -1,5 +1,9 @@
 <div class="dashboard-container">
 
+    <button mat-button class="dashboard-btn-logout" (click)="logout()">
+        <mat-icon id="dashboard-btn-logout-icon">logout</mat-icon>
+    </button>
+    
     <figure class="border-top-image">
         <img src="assets/images/border-top.png" alt="Borde esquinero superior" class="border-img">
     </figure>
@@ -23,8 +27,6 @@
             <button id="item-contact-button-4" mat-flat-button>Añadir contacto</button>
         
         </div>
-
-        <app-contact-detail></app-contact-detail>
 
     </div>
 
