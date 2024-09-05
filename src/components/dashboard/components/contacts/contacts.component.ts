@@ -4,8 +4,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { DashboardService } from '../../dashboard.service';
-import { Contact, Contacts } from '../../dashboard.type'
-import { SharedModule } from '../../../../shared.module';
+import { Contact, Contacts, DataInactive, DeleteContacts } from '../../dashboard.type'
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -16,7 +16,7 @@ import { SharedModule } from '../../../../shared.module';
         MatButtonModule, 
         MatDividerModule, 
         MatIconModule,
-        SharedModule
+        RouterLink
     ],
     templateUrl: './contact.component.html',
     styleUrl: './contacts.component.css',
@@ -29,13 +29,34 @@ export class ContactsComponent implements OnInit {
     constructor( private _dashboardService: DashboardService ) {}
 
     ngOnInit(): void {
+        this.getContacts()
+    }
+
+    getContacts(): void {
         this._dashboardService.getContacs(4).subscribe({
-            next: ( value: Contacts ) => {
+            next: (value: Contacts) => {
                 this.contactsData = value.contacts
             },
             error: (err) => {
                 console.log( err ); 
             }
         })
+    }
+
+    inactiveContact( contact_id: number ): void {
+
+        const data: DataInactive = {   
+            is_active: 0  
+        }
+
+        this._dashboardService.inactiveContact( contact_id, data).subscribe({
+            next: (value: DeleteContacts ) => {
+                this.getContacts();
+                alert( value.msg );
+            },  
+            error: ( err ) => {
+                console.log( err );
+            }
+        })    
     }
 }
