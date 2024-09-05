@@ -19,7 +19,8 @@ import { SharedModule } from '../../../../shared.module';
         SharedModule
     ],
     templateUrl: './contact.component.html',
-    styleUrl: './contacts.component.css'
+    styleUrl: './contacts.component.css',
+    providers: [ DashboardService ]
 })
 export class ContactsComponent implements OnInit {
     

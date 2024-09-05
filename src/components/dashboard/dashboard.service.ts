@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { environments } from '../../environments/environments';
 import { Contacts } from './dashboard.type';
 
-@Injectable({
-  providedIn: null
-})
+@Injectable()
 export class DashboardService {
 
   constructor( private _http: HttpClient ) {
