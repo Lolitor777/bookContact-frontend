@@ -2,20 +2,34 @@
 <div class="contact-detail-container">
     <h3>{{ data.contact.name }} {{ data.contact.last_name }}</h3>
     <form class="contact-detail-container-child" [formGroup]="contactDetailForm">
-      <mat-form-field>
-          <input type="email" matInput formControlName="email">
-          <mat-icon class="contact-detail-info-icon" matSuffix>email</mat-icon>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <input type="email" matInput formControlName="phone">
-          <mat-icon class="contact-detail-info-icon">phone</mat-icon>
-      </mat-form-field>
-  
-      <mat-form-field>
-          <input type="email" matInput formControlName="address">
-          <mat-icon class="contact-detail-info-icon">location_on</mat-icon>
-      </mat-form-field>
-    </form>
-  </div>
 
+        <mat-form-field>
+            <input matInput formControlName="name" />
+            <mat-icon class="contact-detail-info-icon" matSuffix>people</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="last_name" />
+            <mat-icon class="contact-detail-info-icon" matSuffix>people</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="email" />
+            <mat-icon class="contact-detail-info-icon" matSuffix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="phone" />
+            <mat-icon class="contact-detail-info-icon" matSuffix>phone</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="address" />
+            <mat-icon class="contact-detail-info-icon" matSuffix>location_on</mat-icon>
+        </mat-form-field>
+
+        <button *ngIf="data.typeModa == typeModa.edit" mat-flat-button (click)="editContact(data.contact.contact_id)">
+            Editar contacto
+        </button>
+    </form>
+</div>

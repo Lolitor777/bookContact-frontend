@@ -33,6 +33,10 @@ export class ContactsComponent implements OnInit {
 
     ngOnInit(): void {
         this.getContacts()
+
+        this._dashboardService.update$.subscribe(() => {
+            this.getContacts();
+        });
     }
 
     getContacts(): void {
@@ -84,4 +88,5 @@ export class ContactsComponent implements OnInit {
               }
           });
     }
+
 }
