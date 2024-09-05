@@ -7,14 +7,18 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterOutlet } from '@angular/router';
+import ContactDetailComponent from './components/contact-detail/contact-detail.component';
 
 @Component({
     selector: 'app-dashboard',
     standalone: true,
     imports: [
+        RouterOutlet,
         CommonModule,
         HeaderComponent,
         ContactsComponent,
+        ContactDetailComponent,
         RecordComponent,
         MatTabsModule,
         MatButtonModule, 
@@ -22,7 +26,6 @@ import {MatButtonModule} from '@angular/material/button';
         MatIconModule,
     ],
     templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.css',
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent { }
+export default class DashboardComponent { }

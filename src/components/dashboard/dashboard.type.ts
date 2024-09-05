@@ -15,3 +15,12 @@ export interface Contact {
     createdAt:    Date;
     updatedAt:    null;
 }
+
+export interface DeleteContacts {
+    ok:  boolean;
+    msg: string;
+}
+
+export interface DataInactive {
+    is_active: number;
+}
